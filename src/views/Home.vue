@@ -1,11 +1,16 @@
 <template>
   <div class="home">
-    Home Page
+    <MoviesGrid />
   </div>
 </template>
 
 <script>
+import MoviesGrid from '@/components/MoviesGrid.vue';
+
 export default {
   name: 'Home',
+  components: {
+    MoviesGrid,
+  },
 };
 </script>
