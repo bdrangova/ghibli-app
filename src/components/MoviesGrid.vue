@@ -7,35 +7,36 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-import MovieCard from './MovieCard.vue';
+import { mapGetters, mapActions } from "vuex";
+import MovieCard from "./MovieCard.vue";
 
 export default {
-  name: 'MoviesGrid',
+  name: "MoviesGrid",
   components: {
-    MovieCard,
+    MovieCard
   },
   methods: {
-    ...mapActions(['fetchMovies']),
+    ...mapActions(["fetchMovies"])
   },
-  computed: mapGetters(['allMovies']),
+  computed: mapGetters(["allMovies"]),
   created() {
-    this.fetchMovies();
-  },
+    if (this.allMovies.length <= 1) {
+      this.fetchMovies();
+    }
+  }
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
 .wrapper {
   margin: 3rem 20rem;
   display: flex;
   flex-direction: column;
-}
-
-.content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 3rem;
-  grid-column-gap: 6rem;
+  .content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 3rem;
+    grid-column-gap: 6rem;
+  }
 }
 </style>

@@ -1,16 +1,16 @@
 <template>
-  <div class="home">
+  <section class="home">
     <MoviesGrid />
-  </div>
+  </section>
 </template>
 
 <script>
-import MoviesGrid from '@/components/MoviesGrid.vue';
+import MoviesGrid from "@/components/MoviesGrid.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    MoviesGrid,
-  },
+    MoviesGrid
+  }
 };
 </script>
